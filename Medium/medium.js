@@ -18,3 +18,6 @@ function cutPizzaSlices() {
     console.log("Each person gets 4.00 slices of pizza")
 }
 
+function cutPizzaSlices(slices){
+  return function S
+}
