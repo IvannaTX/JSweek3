@@ -19,7 +19,9 @@ Notes on prototype: //https://www.tutorialsteacher.com/javascript/prototype-in-j
 
 */
 
-/*function person1(name, job, age) {
+/* FIRST ATTEMPT
+
+function person1(name, job, age) {
     this.name = name;
     this.job = job;
     this.age = age;
@@ -29,18 +31,10 @@ Notes on prototype: //https://www.tutorialsteacher.com/javascript/prototype-in-j
     this.fetchJob = function(){
         console.log(`${this.name} is a ${this.job}`);
     };
-}
-
-const thetheProgrammer = new person1("Ivanna", "theProgrammer", 23);
-thetheProgrammer.excercise();
-thetheProgrammer.fetchJob();
-
-class theProgrammer extends person1{
-    constructor(name, job, age, languages){
-        this.languages = english;
-
-    }
 }*/
+
+//20TH THOUSAUND ATTEMPT *SAD FACE*
+
 //1.
 function Person(name, job, age) {
     this.name = name;
