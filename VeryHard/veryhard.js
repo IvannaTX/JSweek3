@@ -34,17 +34,18 @@ function person1(name, job, age) {
 }*/
 
 //20TH THOUSAUND ATTEMPT *SAD FACE*
-
 //1.
 function Person(name, job, age) {
     this.name = name;
     this.job = job;
     this.age = age;
 }
-//2./3.
+//2.
 Person.prototype.exercise = () => console.log("Running is fun! - said no one ever");
-Person.prototype.fetchJob = function() {console.log(`${this.name} is a ${this.job}`)};
 
+//3.
+Person.prototype.fetchJob = function() {console.log(`${this.name} is a ${this.job}`)};
+//undefined as a second arrow function
 
 //4.
 function Programmer(name, job, age, languages) {
