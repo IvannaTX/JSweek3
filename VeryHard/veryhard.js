@@ -80,8 +80,8 @@ p1.fetchJob();
 // --> Brad is a back-end developer
 
 // 5/6/7:
-const p2 = new Programmer('Mark', 'Front End Developer', 24, ['HTML', 'CSS', 'JavaScript']);
-p2.fetchJob(); // --> Mark is a Front End Developer
+const p2 = new Programmer('Mark', 'Junior Developer', 24, ['HTML', 'CSS', 'JavaScript']);
+p2.fetchJob(); // --> Mark is a Junior Developer
 p2.acceptNewTask(); // BUSY
 p2.offerNewTask(); // --> Mark can't accept any new tasks right now.
 p2.completeTask(); // NOT BUSY
