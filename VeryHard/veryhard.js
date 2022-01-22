@@ -1,4 +1,5 @@
-/*VERY HARD: 
+/*VERY HARD: Object prototype chain and prototypal inheritance exercise.
+
 1. Create a Person constructor that has three properties: name, job, and age.
 2. Give the Person an 'exercise' method that console logs whatever you want, e.g. "Running is fun! - said no one ever".
 3. Give the Person a 'fetchJob' method that console logs the person's name and job, e.g. "Brad is a back-end developer".
@@ -19,19 +20,35 @@ Notes on prototype: //https://www.tutorialsteacher.com/javascript/prototype-in-j
 
 */
 
-/* FIRST ATTEMPT
+//FIRST ATTEMPT
 
-function person1(name, job, age) {
+/*function person1(name, job, age) {
     this.name = name;
     this.job = job;
     this.age = age;
-    this.excercise = function(){
-        console.log('Swimming is better than running');
+    this.excercise1 = function(){
+        console.log('Running is fun!');
     };
-    this.fetchJob = function(){
+    this.fetchJob1 = function(){
         console.log(`${this.name} is a ${this.job}`);
     };
-}*/
+
+}
+//converted to a class from function and broke all my code *CRIES*
+class theProgrammer(name, job, age, languages) {
+    person1.call(this, name, job, age);
+    //'calls'a method of an object, substituting another object for the current object.
+    this.newlanguage = newlanguage;
+    this.busy = true;
+} //had to bring outside the original funcation since "theProgrammer was undefined"
+
+theProgrammer.prototype = {...person1.prototype};
+theProgrammer.prototype.completeFirstTask = function(){this.busy = false};
+theProgrammer.prototype.acceptNewFirstTask = function(){this.busy = true};
+theProgrammer.prototype.offerNewFirstTask = function(){
+    console.log(this.busy ? `${this.name} can't right now.` : 
+    `${this.name} can accept new tasks.`)
+};*/
 
 //20TH THOUSAUND ATTEMPT *SAD FACE*
 //1.
@@ -60,14 +77,28 @@ Programmer.prototype.acceptNewTask = function(){this.busy = true};
 //6.
 Programmer.prototype.offerNewTask = function(){
     //scope function
-    console.log(this.busy ? `${this.name} can't accept any new tasks right now.` : `${this.name} would love to take on a new responsibility.`)
+    console.log(this.busy ? `${this.name} can't accept any new tasks right now.` : 
+    `${this.name} would love to take on a new responsibility.`)
 };
 //7.
 Programmer.prototype.learnLanguage = function(language) { this.languages.push(language) };
 Programmer.prototype.listLanguages = function() {console.log(this.languages)};
 
 // 8. Test Programmers:
-// Step 2/3:
+
+//First Attempt
+/*const firstPerson = new person1 ('Ivanna', 'student', 23);
+firstPerson.excercise1(); // --> Running is fun!
+firstPerson.fetchJob1(); // --> Ivanna is a student
+firstPerson.acceptNewFirstTask(); //BUSY Broken --> "Not a function"
+firstPerson.offerNewFirstTask(); 
+firstPerson.completeFirstTask();
+firstPerson.offerNewFirstTask();
+console.log('\n');*/
+
+
+
+// Final Attempt Test: Step 2/3:
 const p1 = new Person('Brad', 'back-end developer', 53);
 p1.exercise();
 p1.fetchJob();
