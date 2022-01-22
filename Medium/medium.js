@@ -12,12 +12,17 @@ console.log(sharePizza(3));
 
 
 
-var sharePizza = cutPizzaSlices(8);
+//var sharePizza = cutPizzaSlices(8);
 
-function cutPizzaSlices() {
-    console.log("Each person gets 4.00 slices of pizza")
-}
+//function cutPizzaSlices() {
+    //console.log("Each person gets 4.00 slices of pizza")}
 
-function cutPizzaSlices(slices){
-  return function S
-}
+    function cutPizzaSlice(slices){
+      return function(people){
+          var slicesPerPerson = slices / people
+          return (`Each person gets ${slicesPerPerson} slices of pizza`)
+      }
+    }
+    var sharePizza = cutPizzaSlice(8);
+    console.log(sharePizza(2))
+    console.log(sharePizza(3))
