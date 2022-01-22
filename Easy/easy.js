@@ -64,7 +64,7 @@ function exercise(activity){
     }
   }
   
-  var run = exercise("running");
+  var run = exercise("Running");
   var swim = exercise("Swimming");
   console.log(run());
   console.log(swim())
