@@ -10,3 +10,49 @@ You can use 'getName' or other get methods to access data that people might need
 For example, people addressing a package or email may need a customer's name, 
 but they definitely shouldn't have access to their ssn.*/
 
+/* FIRST ATTEMPT
+
+function PII () {
+    this.firstName = 'Ivanna'
+    this.lastName = "Contreras"
+    this.ssn ="123-45-6789"
+
+}*/
+
+
+/* NOT ANY BETTER, BUT 2ND ATTEMPT LOL
+var PII = (function() = {
+    let firstName= "Ivanna";
+    let lastName = "Contreras";
+    let SNN = "I am a private variable";
+    
+    let person = function(){ console.log('Hello', firstName, lastName); };
+    let method2 = function(){ console.log('I am method 2, ', SNN); };
+    
+    return {
+        person: person,
+        method2: method2
+    }
+}());
+
+PII.person(); // I am method 1
+PII.method2(); // I am method 2, I am a private variable*/
+
+
+//THIRD ATTEMPT. YIKES!
+
+const PII = (privateNumber) => {
+    const person = "Hello! Ivanna Contreras"
+    const SNN = privateNumber;
+  
+    return {
+      getName: function() {
+        return person;
+      },
+    };
+  };
+  
+  const account = PII();
+  
+  console.log(account.getName());  
+  
