@@ -22,7 +22,7 @@ Notes on prototype: //https://www.tutorialsteacher.com/javascript/prototype-in-j
 
 //FIRST ATTEMPT
 
-/*function person1(name, job, age) {
+/*function *class* person1(name, job, age) {
     this.name = name;
     this.job = job;
     this.age = age;
@@ -115,3 +115,32 @@ p2.offerNewTask(); // --> Mark would love to take on a new responsibility.
 p2.listLanguages(); // --> [ 'HTML', 'CSS', 'JavaScript' ]
 p2.learnLanguage('React'); // JUST LEARNED NEW LANG
 p2.listLanguages(); // --> [ 'HTML', 'CSS', 'JavaScript', 'React' ]
+
+
+
+
+
+/*class Programmer extends Person {
+            **extending person** constructor(name, job, age, languages) {
+                **automates info** super(name, job, age);
+                this.languages = languages;
+                this.busy = true;
+
+            }
+           *different method* class Person {
+            constructor(name, job, age) {
+                this.name = name;
+                this.job = job;
+                this.age = age;
+            }
+            fetchJob = function() {
+
+                console.log(`${this.name} is a ${this.job}`);
+            }
+
+            exercise = function() {
+                console.log(`${this.name} thinks Spin class is fun`);
+            }
+
+
+        }*/

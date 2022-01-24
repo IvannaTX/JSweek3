@@ -52,9 +52,8 @@ const PII = (privateNumber) => {
     };
   };
   
-  const account = PII();
+  const account = PII("123-45-6789");
+  console.log(account.SNN); // --> undefined
   
-  console.log(account.getName());  
-
-  //Still working on challenge^^
+  console.log(account.getName());  // --> Hello! Ivanna Contreras
   
